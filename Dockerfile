@@ -1,8 +1,28 @@
-FROM node:12-alpine
-RUN tar -xvf /_dependencies/hugo_0.64.1_Linux-32bit.tar.gz -C /usr/local/bin
-RUN curl -fsSL https://deb.nodesource.com/setup_17.x
-RUN sudo -E bash -apt-get install -y nodejs
-RUN npm install
-RUN npm run server
+FROM nginx:alpine as build
 
+RUN apk add --update \
+    wget
+RUN apk add --update \
+    git
+RUN apk add --update \
+    nodejs
+RUN apk add --update \
+    npm
+    
+ARG HUGO_VERSION="0.72.0"
+RUN wget --quiet "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz" && \
+    tar xzf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
+    rm -r hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
+    mv hugo /usr/bin
 
+COPY ./ /site
+WORKDIR /site
+RUN git submodule init; \
+    git submodule update
+RUN hugo
+
+#Copy static files to Nginx
+FROM nginx:alpine
+COPY --from=build /site/public /usr/share/nginx/html
+
+WORKDIR /usr/share/nginx/html
