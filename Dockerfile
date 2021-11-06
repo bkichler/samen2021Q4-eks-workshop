@@ -17,6 +17,7 @@ RUN wget --quiet "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VER
 
 COPY ./ /site
 WORKDIR /site
+
 RUN git submodule init; \
     git submodule update
 RUN hugo

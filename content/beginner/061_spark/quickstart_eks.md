@@ -1,7 +1,7 @@
 ---
 title: "Apache Spark on EKS"
 date: 2021-11-06T08:30:11-07:00
-weight: 500
+weight: 10
 ---
 
 # Quickstart: BKPR on Amazon Elastic Container Service for Kubernetes (Amazon EKS)
