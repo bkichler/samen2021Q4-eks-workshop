@@ -1,7 +1,7 @@
 languageCode = "en-us"
 ignoreFiles = [ "\\.files/README.md$",  "content/intermediate/260_weave_flux/app.files/"]
 defaultContentLanguage = "en"
-title = "Itility US 2021Q4 Samen Workshop"
+title = "Itility US Samen 2021Q4 Workshop"
 theme = "learn"
 uglyurls = false
 # googleAnalytics = "UA-44634850-4"
@@ -14,9 +14,9 @@ hrefTargetBlank = true
 [params]
 editURL = "https://github.com/bkichler/samen2021Q4-eks-workshop/edit/main/content/"
 themeVariant = "mine"
-showVisitedLinks = false
-author = "Itility Fork Author: Brian Kichler"
-description = "Itility US 2021Q4 samen kubernetes workshop"
+showVisitedLinks = true
+author = "For Itility US: Brian Kichler"
+description = "Itility US Samen 2021Q4 Workshop"
 disableSearch = false
 disableAssetsBusting = false
 disableLanguageSwitchingButton = true
@@ -123,13 +123,13 @@ url = "/authors"
 weight = 20
 
 [[menu.shortcuts]]
-name = "<i class='fab fa-github'></i> GitHub Project"
-url = "https://github.com/aws-samples/eks-workshop"
+name = "<i class='fab fa-github'></i> GitHub Project (Itility US)"
+url = "https://github.com/bkichler/samen2021Q4-eks-workshop"
 weight = 30
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-envelope'></i> Have questions?"
-url = "mailto:eksworkshop@amazon.com"
+url = "mailto:brian.kichler@us-itility.com"
 weight = 40
 
 
