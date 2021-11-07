@@ -2,9 +2,11 @@
 title: "Installing Apache Spark on EKS"
 date: 2021-11-06T08:30:11-07:00
 weight: 10
+tags:
+  - samen
 ---
 
-# Quickstart: BKPR on Amazon Elastic Container Service for Kubernetes (Amazon EKS)
+## Quickstart: BKPR on Amazon Elastic Container Service for Kubernetes (Amazon EKS)
 
 ## Table of contents
 
@@ -33,7 +35,7 @@ This document walks you through setting up an Amazon Elastic Container Service f
 
 ### DNS requirements
 
-In addition to the requirements listed above, a domain name is also required for setting up Ingress endpoints to services running in the cluster. The specified domain name can be a top-level domain (TLD) or a subdomain. In either case, you have to manually [set up the NS records](#step-4-configure-domain-registration-records) for the specified TLD or subdomain so as to delegate DNS resolution queries to an Amazon Route 53 hosted zone created and managed by BKPR.  This is required in order to generate valid TLS certificates.
+In addition to the requirements listed above, a domain name is also required for setting up Ingress endpoints to services running in the cluster. The specified domain name can be a top-level domain (TLD) or a subdomain. In either case, you have to manually [set up the NS records](#step-3-configure-domain-registration-records) for the specified TLD or subdomain so as to delegate DNS resolution queries to an Amazon Route 53 hosted zone created and managed by BKPR.  This is required in order to generate valid TLS certificates.
 
 ## Installation and setup
 

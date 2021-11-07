@@ -2,8 +2,9 @@
 title: "Installing Kubeapps on BKPR"
 date: 2021-11-06T08:30:11-07:00
 weight: 20
+tags:
+  - samen
 ---
-# Installing Kubeapps on BKPR
 
 This guide documents the installation of [Kubeapps](https://kubeapps.com/) on the Bitnami Kubernetes Production Runtime (BKPR) cluster. You will first install the [Helm](https://www.helm.sh/) package manager to the cluster, followed by the installation of Kubeapps using the [Kubeapps Helm chart](https://hub.kubeapps.com/charts/bitnami/kubeapps).
 
