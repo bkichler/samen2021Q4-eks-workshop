@@ -3,7 +3,7 @@ title: "Conclusion"
 chapter: true
 weight: 910
 tags:
-  - beginner
+  - samen
 ---
 
 # Conclusion
