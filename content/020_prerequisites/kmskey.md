@@ -4,7 +4,9 @@ chapter: false
 weight: 32
 ---
 
-Run the following in your Cloud9 terminal to save a TEAM_NAME variable and export it to your bash_profile:
+Run the following line in your Cloud9 terminal. When you get a newline with a prompt, type in your team's name. See below for an example, then run it yourself:
+
+![createrole](/images/prerequisites/read_teamname.png)
 
 ```bash
 read TEAM_NAME

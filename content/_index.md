@@ -1,15 +1,14 @@
 ---
-title: "Amazon EKS Workshop"
+title: "Itility US Samen 2021Q4 Workshop"
 chapter: true
 weight: 1
 ---
 
 {{% notice note %}}
-For even more container related content, check out our new show:
-[Containers from the Couch](https://containersfromthecouch.com) 
+For even more container related content, check out [Containers from the Couch](https://containersfromthecouch.com) 
 {{% /notice %}}
 
-<div style="text-align: center"><h2>Amazon EKS Workshop</h2></div>
+<div style="text-align: center"><h2>Itility US Samen 2021Q4 Workshop</h2></div>
 
 ![EKS](images/3-service-animated.gif)
 
