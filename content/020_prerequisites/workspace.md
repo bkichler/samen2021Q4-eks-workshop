@@ -92,3 +92,30 @@ if [ $? -eq 0 ]; then
 fi
 
 ```
+
+### Share your environment with your team
+
+#### Invite a user in the same account as the Environment
+Use the instructions in this section to share an AWS Cloud9 development environment that you own in your AWS account with a user in that same account.
+
+1. If the user you want to invite is not one of the following types of users, be sure the user you want to invite already has the corresponding environment member access role:
+    - The **AWS account root user**.
+    - An **IAM administrator user**.
+    - A **user who belongs to an IAM group**, a user who assumes a role, or a federated user who assumes a role, and that group or role has the AWS managed policy AWSCloud9Administrator attached.
+
+2. Open the environment that you own and want to invite the user to, if the environment isn't already open.
+3. In the menu bar in the AWS Cloud9 IDE, do one of the following.
+    - Choose **Window, Share**.
+    - Choose **Share** (located next to the **Preferences** gear icon):
+![c9share](/images/prerequisites/c9share.png)
+
+4. In the **Share this environment** dialog box, for **Invite Members**, type one of the following.
+    - To invite an **IAM user**, enter the name of the user.
+    - To invite the **AWS account root user**, type ```arn:aws:iam::123456789012:root```, **replacing 123456789012 with your AWS account ID**.
+
+5. To make this user a read-only member, choose **R**. To make this user read/write, choose **RW**.
+6. Choose **Invite**.
+
+{{% notice info %}}
+If you make this user a read/write member, a dialog box is displayed, containing information about possibly putting your AWS security credentials at risk. The following information provides more background about this issue. You should share an environment only with those you trust. A read/write member may be able to use the AWS CLI, the aws-shell, or AWS SDK code in your environment to take actions in AWS on your behalf. Furthermore, if you store your permanent AWS access credentials within the environment, that member could potentially copy those credentials and use them outside of the environment. Removing your permanent AWS access credentials from your environment and using temporary AWS access credentials instead does not fully address this issue. It lessens the opportunity of the member to copy those temporary credentials and use them outside of the environment (as those temporary credentials will work only for a limited time). However, temporary credentials still enable a read/write member to take actions in AWS from the environment on your behalf.
+{{% /notice %}}

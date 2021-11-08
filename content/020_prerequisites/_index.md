@@ -20,7 +20,7 @@ tags:
 Everyone should have the same default password: **ItilityUSQ4Samen**
 {{% /notice %}}
 
-#### To start the workshop, sign into the Itility US Samen AWS workspace:
+#### To start the workshop, sign into the [Itility US Samen AWS workspace](https://053164941908.signin.aws.amazon.com/console):
 
 ![awssignin](/images/prerequisites/sign_into_itility_us_playground.png)
 
