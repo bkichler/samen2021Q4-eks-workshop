@@ -25,5 +25,12 @@ RUN hugo
 #Copy static files to Nginx
 FROM nginx:alpine
 COPY --from=build /site/public /usr/share/nginx/html
+RUN rm /etc/nginx/conf.d/default.conf
+COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
+
+RUN chgrp -R root /var/cache/nginx /var/run /var/log/nginx && \
+    chmod -R 770 /var/cache/nginx /var/run /var/log/nginx
 
 WORKDIR /usr/share/nginx/html
+EXPOSE 80 443
+CMD ["nginx", "-g", "daemon off;"]
