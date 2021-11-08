@@ -3,11 +3,12 @@ title: "Create an AWS KMS Custom Managed Key (CMK)"
 chapter: false
 weight: 32
 ---
+***
+### TEAM_NAME -> bash_profile
 
-Run the following line in your Cloud9 terminal. When you get a newline with a prompt, type in your team's name. See below for an example, then run it yourself:
-
-![createrole](/images/prerequisites/read_teamname.png)
-
+Run the following line in your Cloud9 terminal. When you get a newline with a prompt, type in your team's name.  
+See below for an example, then run it yourself:
+![readteamname](/images/prerequisites/read_teamname.png)
 ```bash
 read TEAM_NAME
 ```
@@ -21,7 +22,8 @@ Add your TEAM_NAME variable to bash_profile:
 ```bash
 echo "export AWS_REGION=${TEAM_NAME}" | tee -a ~/.bash_profile
 ```
-
+***
+### Create your CMK
 Create a CMK for the EKS cluster to use when encrypting your Kubernetes secrets:
 ```bash
 aws kms create-alias --alias-name alias/eksworkshop-"$TEAM_NAME" --target-key-id $(aws kms create-key --query KeyMetadata.Arn --output text)
