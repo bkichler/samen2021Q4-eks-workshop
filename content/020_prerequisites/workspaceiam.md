@@ -24,10 +24,6 @@ rm -vf ${HOME}/.aws/credentials
 
 We should configure our aws cli with our current region as default.
 
-{{% notice info %}}
-If you are [at an AWS event](https://eksworkshop.com/020_prerequisites/aws_event/), ask your instructor which **AWS region** to use.
-{{% /notice %}}
-
 ```sh
 export ACCOUNT_ID=$(aws sts get-caller-identity --output text --query Account)
 export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
