@@ -21,7 +21,7 @@ You configure the size of your Auto Scaling group by setting the minimum, maximu
 ```bash
 aws autoscaling \
     describe-auto-scaling-groups \
-    --query "AutoScalingGroups[? Tags[? (Key=='eks:cluster-name') && Value=='eksworkshop-eksctl']].[AutoScalingGroupName, MinSize, MaxSize,DesiredCapacity]" \
+    --query "AutoScalingGroups[? Tags[? (Key=='eks:cluster-name') && Value=='eksworkshop-eksctl-"$TEAM_NAME"']].[AutoScalingGroupName, MinSize, MaxSize,DesiredCapacity]" \
     --output table
 ```
 
@@ -37,7 +37,7 @@ Now, increase the maximum capacity to 4 instances
 
 ```bash
 # we need the ASG name
-export ASG_NAME=$(aws autoscaling describe-auto-scaling-groups --query "AutoScalingGroups[? Tags[? (Key=='eks:cluster-name') && Value=='eksworkshop-eksctl']].AutoScalingGroupName" --output text)
+export ASG_NAME=$(aws autoscaling describe-auto-scaling-groups --query "AutoScalingGroups[? Tags[? (Key=='eks:cluster-name') && Value=='eksworkshop-eksctl-$TEAM_NAME']].AutoScalingGroupName" --output text)
 
 # increase max capacity up to 4
 aws autoscaling \
@@ -50,7 +50,7 @@ aws autoscaling \
 # Check new values
 aws autoscaling \
     describe-auto-scaling-groups \
-    --query "AutoScalingGroups[? Tags[? (Key=='eks:cluster-name') && Value=='eksworkshop-eksctl']].[AutoScalingGroupName, MinSize, MaxSize,DesiredCapacity]" \
+    --query "AutoScalingGroups[? Tags[? (Key=='eks:cluster-name') && Value=='eksworkshop-eksctl-$TEAM_NAME']].[AutoScalingGroupName, MinSize, MaxSize,DesiredCapacity]" \
     --output table
 ```
 
@@ -66,7 +66,7 @@ Enabling IAM roles for service accounts on your cluster
 
 ```bash
 eksctl utils associate-iam-oidc-provider \
-    --cluster eksworkshop-eksctl \
+    --cluster eksworkshop-eksctl-"$TEAM_NAME" \
     --approve
 ```
 

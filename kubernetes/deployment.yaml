@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecsdemo-workshop
+  labels:
+    app: ecsdemo-workshop
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecsdemo-workshop
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: ecsdemo-workshop
+    spec:
+      containers:
+      - image: bkichler1982/itility-us-samen-q421:latest
+        imagePullPolicy: Always
+        name: ecsdemo-workshop
+        ports:
+        - containerPort: 3000
+          protocol: TCP
