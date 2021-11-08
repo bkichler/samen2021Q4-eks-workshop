@@ -66,7 +66,7 @@ kind: ClusterConfig
 metadata:
   name: eksworkshop-eksctl-${TEAM_NAME}
   region: ${AWS_REGION}
-  version: "1.19"
+  version: "1.21.2"
 
 availabilityZones: ["${AZS[0]}", "${AZS[1]}", "${AZS[2]}"]
 
@@ -88,10 +88,6 @@ EOF
 ```
 
 Next, use the file you created as the input for the eksctl cluster creation.
-
-{{% notice info %}}
-We are deliberatly launching at least one Kubernetes version behind the latest available on [Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html). This allows you to perform the [cluster upgrade](https://www.eksworkshop.com/intermediate/320_eks_upgrades/) lab.
-{{% /notice %}}
 
 ```bash
 eksctl create cluster -f eksworkshop.yaml
