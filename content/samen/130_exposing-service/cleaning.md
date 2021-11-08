@@ -14,7 +14,7 @@ kubectl delete -f ~/environment/run-my-nginx.yaml
 kubectl delete ns my-nginx
 rm ~/environment/run-my-nginx.yaml
 
-export EKS_CLUSTER_VERSION=$(aws eks describe-cluster --name eksworkshop-eksctl --query cluster.version --output text)
+export EKS_CLUSTER_VERSION=$(aws eks describe-cluster --name eksworkshop-eksctl-"$TEAM_NAME" --query cluster.version --output text)
 
 if [ "`echo "${EKS_CLUSTER_VERSION} < 1.19" | bc`" -eq 1 ]; then     
     curl -s https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/main/docs/examples/2048/2048_full.yaml \
@@ -36,7 +36,7 @@ helm uninstall aws-load-balancer-controller \
 kubectl delete -k github.com/aws/eks-charts/stable/aws-load-balancer-controller//crds?ref=master
 
 eksctl delete iamserviceaccount \
-    --cluster eksworkshop-eksctl \
+    --cluster eksworkshop-eksctl-"$TEAM_NAME" \
     --name aws-load-balancer-controller \
     --namespace kube-system \
     --wait

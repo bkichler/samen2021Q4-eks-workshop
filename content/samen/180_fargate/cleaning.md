@@ -16,7 +16,7 @@ helm uninstall aws-load-balancer-controller \
     -n kube-system
 
 eksctl delete iamserviceaccount \
-    --cluster eksworkshop-eksctl \
+    --cluster eksworkshop-eksctl-"$TEAM_NAME" \
     --name aws-load-balancer-controller \
     --namespace kube-system \
     --wait

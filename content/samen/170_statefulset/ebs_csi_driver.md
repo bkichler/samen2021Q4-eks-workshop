@@ -51,12 +51,12 @@ We'll ask `eksctl` to create an IAM Role that contains the IAM Policy we just cr
 # Create an IAM OIDC provider for your cluster
 eksctl utils associate-iam-oidc-provider \
   --region=$AWS_REGION \
-  --cluster=eksworkshop-eksctl \
+  --cluster=eksworkshop-eksctl-"$TEAM_NAME" \
   --approve
 
 # Create a service account
 eksctl create iamserviceaccount \
-  --cluster eksworkshop-eksctl \
+  --cluster eksworkshop-eksctl-"$TEAM_NAME" \
   --name ebs-csi-controller-irsa \
   --namespace kube-system \
   --attach-policy-arn $EBS_CSI_POLICY_ARN \

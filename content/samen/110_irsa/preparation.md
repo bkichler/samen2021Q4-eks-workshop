@@ -41,7 +41,7 @@ aws-cli/1.19.112 Python/2.7.18 Linux/4.14.232-177.418.amzn2.x86_64 botocore/1.20
 Your EKS cluster has an OpenID Connect issuer URL associated with it, and this will be used when configuring the IAM OIDC Provider. You can check it with:
 
 ```bash
-aws eks describe-cluster --name eksworkshop-eksctl --query cluster.identity.oidc.issuer --output text
+aws eks describe-cluster --name eksworkshop-eksctl-"$TEAM_NAME" --query cluster.identity.oidc.issuer --output text
 ```
 
 Output:

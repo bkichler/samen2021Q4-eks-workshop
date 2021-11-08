@@ -19,7 +19,7 @@ The Cloud9 Preview browser doesn't appear to support the token authentication, s
 Open a New Terminal Tab  and enter
 
 ```bash
-aws eks get-token --cluster-name eksworkshop-eksctl | jq -r '.status.token'
+aws eks get-token --cluster-name eksworkshop-eksctl-"$TEAM_NAME" | jq -r '.status.token'
 ```
 
 Copy the output of this command and then click the radio button next to

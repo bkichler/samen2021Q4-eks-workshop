@@ -14,7 +14,7 @@ kubectl delete -f ~/environment/irsa/job-ec2.yaml
 eksctl delete iamserviceaccount \
     --name iam-test \
     --namespace default \
-    --cluster eksworkshop-eksctl \
+    --cluster eksworkshop-eksctl-"$TEAM_NAME" \
     --wait
 
 rm -rf ~/environment/irsa/

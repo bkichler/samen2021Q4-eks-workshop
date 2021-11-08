@@ -13,7 +13,7 @@ First, let's create the RDS security group (RDS_SG). It will be used by the Amaz
 
 ```bash
 export VPC_ID=$(aws eks describe-cluster \
-    --name eksworkshop-eksctl \
+    --name eksworkshop-eksctl-"$TEAM_NAME" \
     --query "cluster.resourcesVpcConfig.vpcId" \
     --output text)
 

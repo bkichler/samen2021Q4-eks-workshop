@@ -41,7 +41,7 @@ Learn more about [IAM Roles for Service Accounts](https://docs.aws.amazon.com/ek
 ```bash
 eksctl utils associate-iam-oidc-provider \
     --region ${AWS_REGION} \
-    --cluster eksworkshop-eksctl \
+    --cluster eksworkshop-eksctl-"$TEAM_NAME" \
     --approve
 ```
 
@@ -63,7 +63,7 @@ Next, create a Kubernetes Service Account by executing the following command
 
 ```bash
 eksctl create iamserviceaccount \
-  --cluster eksworkshop-eksctl \
+  --cluster eksworkshop-eksctl-"$TEAM_NAME" \
   --namespace kube-system \
   --name aws-load-balancer-controller \
   --attach-policy-arn arn:aws:iam::${ACCOUNT_ID}:policy/AWSLoadBalancerControllerIAMPolicy \
@@ -128,14 +128,14 @@ If the result is <span style="color:red">${LBC_VERSION} has NOT been set.</span>
 helm repo add eks https://aws.github.io/eks-charts
 
 export VPC_ID=$(aws eks describe-cluster \
-                --name eksworkshop-eksctl \
+                --name eksworkshop-eksctl-"$TEAM_NAME" \
                 --query "cluster.resourcesVpcConfig.vpcId" \
                 --output text)
 
 helm upgrade -i aws-load-balancer-controller \
     eks/aws-load-balancer-controller \
     -n kube-system \
-    --set clusterName=eksworkshop-eksctl \
+    --set clusterName=eksworkshop-eksctl-"$TEAM_NAME" \
     --set serviceAccount.create=false \
     --set serviceAccount.name=aws-load-balancer-controller \
     --set image.tag="${LBC_VERSION}" \

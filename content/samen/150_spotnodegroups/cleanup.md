@@ -24,5 +24,5 @@ To delete the label and the Node Group created by this module, run the following
 ```bash
 kubectl label nodes --all lifecycle-
 
-eksctl delete nodegroup --cluster=eksworkshop-eksctl --region=${AWS_REGION} --name=ng-spot
+eksctl delete nodegroup --cluster=eksworkshop-eksctl-"$TEAM_NAME" --region=${AWS_REGION} --name=ng-spot
 ```

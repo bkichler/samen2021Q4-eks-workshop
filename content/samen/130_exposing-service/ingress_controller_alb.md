@@ -70,7 +70,7 @@ If `Helm` is not found, click [installing Helm CLI](/samen/060_helm/helm_intro/i
 ```bash
 eksctl utils associate-iam-oidc-provider \
     --region ${AWS_REGION} \
-    --cluster eksworkshop-eksctl \
+    --cluster eksworkshop-eksctl-"$TEAM_NAME" \
     --approve
 ```
 
@@ -134,7 +134,7 @@ Now let’s deploy a sample [2048 game](https://gabrielecirulli.github.io/2048/)
 Deploy 2048 game resources:
 
 ```bash
-export EKS_CLUSTER_VERSION=$(aws eks describe-cluster --name eksworkshop-eksctl --query cluster.version --output text)
+export EKS_CLUSTER_VERSION=$(aws eks describe-cluster --name eksworkshop-eksctl-"$TEAM_NAME" --query cluster.version --output text)
 
 if [ "`echo "${EKS_CLUSTER_VERSION} < 1.19" | bc`" -eq 1 ]; then     
     curl -s https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/main/docs/examples/2048/2048_full.yaml \

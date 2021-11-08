@@ -27,7 +27,7 @@ helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubato
 
 ```bash
 # Get the VPC ID
-export VPC_ID=$(aws eks describe-cluster --name eksworkshop-eksctl --query "cluster.resourcesVpcConfig.vpcId" --output text)
+export VPC_ID=$(aws eks describe-cluster --name eksworkshop-eksctl-"$TEAM_NAME" --query "cluster.resourcesVpcConfig.vpcId" --output text)
 
 
 helm --namespace 2048-game install 2048-game \

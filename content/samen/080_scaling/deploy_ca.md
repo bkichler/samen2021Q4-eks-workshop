@@ -107,7 +107,7 @@ Finally, create an IAM role for the cluster-autoscaler Service Account in the ku
 eksctl create iamserviceaccount \
     --name cluster-autoscaler \
     --namespace kube-system \
-    --cluster eksworkshop-eksctl \
+    --cluster eksworkshop-eksctl-"$TEAM_NAME" \
     --attach-policy-arn "arn:aws:iam::${ACCOUNT_ID}:policy/k8s-asg-policy" \
     --approve \
     --override-existing-serviceaccounts

@@ -53,7 +53,7 @@ TAGS    kubernetes.io/role/elb  1
 TAGS    eksctl.cluster.k8s.io/v1alpha1/cluster-name     eksworkshop-eksctl
 TAGS    Name    eksctl-eksworkshop-eksctl-cluster/SubnetPublicUSEAST2C
 TAGS    aws:cloudformation:stack-name   eksctl-eksworkshop-eksctl-cluster
-TAGS    kubernetes.io/cluster/eksworkshop-eksctl        shared
+TAGS    kubernetes.io/cluster/eksworkshop-eksctl-"$TEAM_NAME"        shared
 TAGS    aws:cloudformation:stack-id     arn:aws:cloudformation:us-east-2:012345678901:stack/eksctl-eksworkshop-eksctl-cluster/8da51fc0-2b5e-11e9-b535-022c6f51bf82
 {{< /output >}}
 Here are the commands to add tags to both the subnets

@@ -25,7 +25,7 @@ Now you will create a IAM role bound to a service account with read-only access 
 eksctl create iamserviceaccount \
     --name iam-test \
     --namespace default \
-    --cluster eksworkshop-eksctl \
+    --cluster eksworkshop-eksctl-"$TEAM_NAME" \
     --attach-policy-arn arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess \
     --approve \
     --override-existing-serviceaccounts

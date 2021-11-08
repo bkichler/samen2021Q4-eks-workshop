@@ -12,7 +12,7 @@ kubectl delete -f https://www.eksworkshop.com/samen/080_scaling/deploy_ca.files/
 eksctl delete iamserviceaccount \
   --name cluster-autoscaler \
   --namespace kube-system \
-  --cluster eksworkshop-eksctl \
+  --cluster eksworkshop-eksctl-"$TEAM_NAME" \
   --wait
 
 aws iam delete-policy \

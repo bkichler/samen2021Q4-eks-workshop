@@ -22,7 +22,7 @@ The next command will deploy the VPC resource controller and VPC [admission cont
 ```bash
 eksctl utils \
     install-vpc-controllers \
-    --cluster eksworkshop-eksctl \
+    --cluster eksworkshop-eksctl-"$TEAM_NAME" \
     --approve
 ```
 

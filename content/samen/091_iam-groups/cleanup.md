@@ -13,9 +13,9 @@ unset KUBECONFIG
 kubectl delete namespace development integration
 kubectl delete pod nginx-admin
 
-eksctl delete iamidentitymapping --cluster eksworkshop-eksctl --arn arn:aws:iam::${ACCOUNT_ID}:role/k8sAdmin
-eksctl delete iamidentitymapping --cluster eksworkshop-eksctl --arn arn:aws:iam::${ACCOUNT_ID}:role/k8sDev
-eksctl delete iamidentitymapping --cluster eksworkshop-eksctl --arn arn:aws:iam::${ACCOUNT_ID}:role/k8sInteg
+eksctl delete iamidentitymapping --cluster eksworkshop-eksctl-"$TEAM_NAME" --arn arn:aws:iam::${ACCOUNT_ID}:role/k8sAdmin
+eksctl delete iamidentitymapping --cluster eksworkshop-eksctl-"$TEAM_NAME" --arn arn:aws:iam::${ACCOUNT_ID}:role/k8sDev
+eksctl delete iamidentitymapping --cluster eksworkshop-eksctl-"$TEAM_NAME" --arn arn:aws:iam::${ACCOUNT_ID}:role/k8sInteg
 
 aws iam remove-user-from-group --group-name k8sAdmin --user-name PaulAdmin
 aws iam remove-user-from-group --group-name k8sDev --user-name JeanDev

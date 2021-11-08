@@ -9,7 +9,7 @@ tags:
 
 ```bash
 export VPC_ID=$(aws eks describe-cluster \
-    --name eksworkshop-eksctl \
+    --name eksworkshop-eksctl-"$TEAM_NAME" \
     --query "cluster.resourcesVpcConfig.vpcId" \
     --output text)
 export RDS_SG=$(aws ec2 describe-security-groups \

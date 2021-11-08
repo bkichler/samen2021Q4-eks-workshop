@@ -21,7 +21,7 @@ helm -n kube-system uninstall aws-ebs-csi-driver
 
 # Delete the service account
 eksctl delete iamserviceaccount \
-  --cluster eksworkshop-eksctl \
+  --cluster eksworkshop-eksctl-"$TEAM_NAME" \
   --namespace kube-system \
   --name ebs-csi-controller-irsa \
   --wait

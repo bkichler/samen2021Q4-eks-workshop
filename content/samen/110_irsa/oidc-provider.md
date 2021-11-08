@@ -24,7 +24,7 @@ If your eksctl version is lower than 0.57.0, use [Installing or Upgrading eksctl
 ##### Create your IAM OIDC Identity Provider for your cluster
 
 ```bash
-eksctl utils associate-iam-oidc-provider --cluster eksworkshop-eksctl --approve
+eksctl utils associate-iam-oidc-provider --cluster eksworkshop-eksctl-"$TEAM_NAME" --approve
 ```
 
 {{< output >}}
