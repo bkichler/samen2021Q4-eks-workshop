@@ -14,13 +14,13 @@ weight: 20
 **How do I check the IAM role on the workspace?**
 
 {{%expand "Expand here to see the solution" %}}
-Run `aws sts get-caller-identity` and validate that your _Arn_ contains `eksworkshop-admin`and an Instance Id.
+Run `aws sts get-caller-identity` and validate that your _Arn_ contains `eksworkshop-"$TEAM_NAME"`and an Instance Id.
 
 ```output
 {
     "Account": "123456789012",
     "UserId": "AROA1SAMPLEAWSIAMROLE:i-01234567890abcdef",
-    "Arn": "arn:aws:sts::123456789012:assumed-role/eksworkshop-admin/i-01234567890abcdef"
+    "Arn": "arn:aws:sts::123456789012:assumed-role/eksworkshop-"$TEAM_NAME"/i-01234567890abcdef"
 }
 ```
 
@@ -52,7 +52,7 @@ metadata:
   region: ${AWS_REGION}
   version: "1.21"
 
-availabilityZones: ["${AZS[0]}", "${AZS[1]}", "${AZS[2]}"]
+availabilityZones: ["${AZS[0]}", "${AZS[1]}"]
 
 managedNodeGroups:
 - name: nodegroup
