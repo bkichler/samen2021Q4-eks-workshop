@@ -33,7 +33,7 @@ fi
 With your ARN in hand, you can issue the command to create the identity mapping within the cluster.
 
 ```bash
-eksctl create iamidentitymapping --cluster eksworkshop-eksctl --arn ${rolearn} --group system:masters --username admin
+eksctl create iamidentitymapping --cluster eksworkshop-eksctl-"$TEAM_NAME" --arn ${rolearn} --group system:masters --username admin
 ```
 
 Note that permissions can be restricted and granular but as this is a workshop cluster, you're adding your console credentials as administrator.
