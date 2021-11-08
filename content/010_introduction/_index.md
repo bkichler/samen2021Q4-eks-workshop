@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "Introduction to Kubernetes & EKS"
 weight: 10
 chapter: true
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Launch using eksctl"
+title: "Launch a cluster with eksctl"
 chapter: true
 weight: 30
 pre: '<i class="fa fa-film" aria-hidden="true"></i> '
