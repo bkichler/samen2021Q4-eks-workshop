@@ -39,11 +39,20 @@ If you do see the correct role, proceed to next step to create an EKS cluster.
 Make sure you enter a value for the **TEAM_NAME** variable so your cluster is uniquely identified.
 {{% /notice %}}
 
-Run the following in your Cloud9 terminal to save a TEAM_NAME variable:
+Run the following in your Cloud9 terminal to save a TEAM_NAME variable and export it to your bash_profile:
 
 ```bash
 read TEAM_NAME
-echo "Your team's name was entered as ${TEAM_NAME}"
+```
+
+Test to check that your TEAM_NAME variable was entered correctly:
+```bash
+test -n "$TEAM_NAME" && echo TEAM_NAME is "$TEAM_NAME" || echo TEAM_NAME is not set
+```
+
+Add your TEAM_NAME variable to bash_profile:
+```bash
+echo "export AWS_REGION=${TEAM_NAME}" | tee -a ~/.bash_profile
 ```
 
 Create an eksctl deployment file (eksworkshop.yaml) use in creating your cluster using the following syntax:
