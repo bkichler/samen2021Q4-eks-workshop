@@ -35,6 +35,17 @@ If you do see the correct role, proceed to next step to create an EKS cluster.
 `eksctl` version must be 0.38.0 or above to deploy EKS 1.19, [click here](/030_eksctl/prerequisites) to get the latest version.
 {{% /notice %}}
 
+{{% notice warning %}}
+Make sure you enter a value for the **TEAM_NAME** variable so your cluster is uniquely identified.
+{{% /notice %}}
+
+Run the following in your Cloud9 terminal to save a TEAM_NAME variable:
+
+```bash
+read TEAM_NAME
+echo "Your team's name was entered as ${TEAM_NAME}"
+```
+
 Create an eksctl deployment file (eksworkshop.yaml) use in creating your cluster using the following syntax:
 
 ```bash
@@ -44,7 +55,7 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: eksworkshop-eksctl
+  name: eksworkshop-eksctl-${TEAM_NAME}
   region: ${AWS_REGION}
   version: "1.19"
 
