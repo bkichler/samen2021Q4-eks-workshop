@@ -1,6 +1,6 @@
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/aws-samples/eks-workshop) 
 
-# eksworkshop
+# eksworkshop - Itility US fork
 
 ### Setup:
 #### Using GitPod.io:
@@ -9,7 +9,7 @@ This is how I set up my environment:
 (I am using gitpod.io for editing)
 
 1. fork the repo to your own github account
-2. prepend `gitpod.io#` to the beginning of your github url. Mine becomes: `https://gitpod.io#github.com/brentley/eks-workshop`
+2. prepend `gitpod.io#` to the beginning of your github url. Mine becomes: `https://github.com/bkichler/samen2021Q4-eks-workshop`
 3. once gitpod has started, in the terminal, run `npm install && npm run theme`
 This will install the dependencies and clone the theme submodule.
 
@@ -73,5 +73,8 @@ deployed hash at the bottom of the menu panel.
 An example is the "jenkinsworld" branch would be deployed to https://eksworkshop.com/jenkinsworld/
 
 note: shift-reload may be necessary in your browser to reflect the latest changes.
+
+#### Run in Docker
+A Dockerfile is available in the repo so you can build your own image and run it in Docker. Alternatively, you can also deploy to Kubernetes. YAML files for a basic deployment are available in ~/kubernetes for that purpose and can be adapted as needed.
 
 
