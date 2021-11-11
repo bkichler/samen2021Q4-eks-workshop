@@ -60,7 +60,7 @@ metadata:
   namespace: rbac-test
 subjects:
 - kind: User
-  name: rbac-user
+  name: rbac-user-"$TEAM_NAME"
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: Role
